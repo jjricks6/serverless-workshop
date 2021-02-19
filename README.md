@@ -18,11 +18,16 @@ In this lab we will be creating a magic 8-ball that will help guide you whenever
 ![](./pictures/Architecture.png)
 
 <br>
+
+## Prerequisites
+
 Before we begin, please make sure you have access to an AWS account. If you need access to the training account, go to https://go.byu.edu/AWSTrainingAccountRequest to request access. (You should be able to get access within a minute or two).
 
 To log into the AWS console, go to awslogin.byu.edu and sign in using your BYU credentials. You should see the byu-org-trn account. Select the PowerUser role and sign in.
 
 Check to make sure you are in the US West (Oregon) region. You can find which region you are in by checking which region is listed in the top right corner of the console.
+
+You will also need to install node.js. Our website runs on the vue.js framework, and node.js is required to get that up and running. Here is a guide on how to install node.js on your windows machine: https://phoenixnap.com/kb/install-node-js-npm-on-windows
 
 I would also reccomend downloading this repo to your local machine. You will need to upload some of the files to our S3 bucket to make it work properly.
 
@@ -89,10 +94,12 @@ For our website to work we will need to add your API URL to the website code.
 
 2. Scroll down to line 67, and replace the example URL with your API URL that you copied when you created your API. Add '/shake' to the end of your url. ![](./pictures/Code_replace.png)
 3. Save the file.
-4. In the console run:
+4. In the console (or windows command line) run:
 ```
 npm run build
 ```
+(If you are getting an error at this step, it is possible you did not install node.js correctly. Take a look at the guide I referenced in the prerequisites again to ensure there were no mistakes.)
+
 5. Once the project is built, a dist folder will be created. The files inside this folder will need to be uploaded to S3. We will cover how to do that next!
 
 ## Uploading our Files to S3
